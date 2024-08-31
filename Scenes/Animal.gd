@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var end: Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
-const SPEED = 200.0
+const SPEED = 150.0
 
 func _ready() -> void:
 	set_physics_process(false)

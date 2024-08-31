@@ -13,12 +13,19 @@ config_version=5
 config/name="GameJamMtl"
 run/main_scene="res://Scenes/Race.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://PNG/icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [layer_names]
 
 2d_physics/layer_1="grass"
 2d_physics/layer_2="animals"
+2d_physics/layer_3="tower"
+2d_physics/layer_4="arrow"
 
 [rendering]
 

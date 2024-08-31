@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck61rvdmc4u5s"]
+
+[ext_resource type="PackedScene" uid="uid://i3cmbc3rwgcl" path="res://Scenes/control.tscn" id="1_c1idv"]
+[ext_resource type="Texture2D" uid="uid://hn3r0vi0ph6o" path="res://PNG/arrow.png" id="2_kaaw8"]
+[ext_resource type="Script" path="res://Scenes/ActualArrow.gd" id="2_v6nhf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ot213"]
+size = Vector2(2, 7)
+
+[node name="Control" instance=ExtResource("1_c1idv")]
+
+[node name="ActualArrow" type="CharacterBody2D" parent="." index="0"]
+rotation = 1.5708
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("2_v6nhf")
+
+[node name="ArrowSprite" type="Sprite2D" parent="ActualArrow" index="0"]
+texture = ExtResource("2_kaaw8")
+
+[node name="ArrowCollision" type="CollisionShape2D" parent="ActualArrow" index="1"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ot213")
