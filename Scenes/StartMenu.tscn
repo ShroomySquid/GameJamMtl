@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://8xymlnjsvrau"]
+
+[ext_resource type="PackedScene" uid="uid://i3cmbc3rwgcl" path="res://Scenes/control.tscn" id="1_twu14"]
+[ext_resource type="Script" path="res://Scenes/StartMenu.gd" id="2_diou2"]
+
+[node name="Control" instance=ExtResource("1_twu14")]
+
+[node name="StartMenu" type="CanvasLayer" parent="." index="0"]
+script = ExtResource("2_diou2")
+
+[node name="BackgroundColor" type="ColorRect" parent="StartMenu" index="0"]
+offset_left = -16.0
+offset_top = -13.0
+offset_right = 1181.0
+offset_bottom = 679.0
+color = Color(0, 1, 1, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu" index="1"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -53.0
+offset_top = 324.0
+offset_right = 43.0
+offset_bottom = 397.0
+grow_horizontal = 2
+
+[node name="StartButton" type="Button" parent="StartMenu/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Start Game
+"
+
+[node name="SettiingsButton" type="Button" parent="StartMenu/VBoxContainer" index="1"]
+layout_mode = 2
+text = "Settings
+"
+
+[node name="Label" type="Label" parent="StartMenu" index="2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -213.0
+offset_top = 197.0
+offset_right = 204.0
+offset_bottom = 242.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Weird Animal Racing Game
+"
+
+[connection signal="pressed" from="StartMenu/VBoxContainer/StartButton" to="StartMenu" method="_on_start_button_pressed"]

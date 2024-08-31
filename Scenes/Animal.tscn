@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4etb1s1x12y0"]
+
+[ext_resource type="Texture2D" uid="uid://dpgo784253x2w" path="res://icon.svg" id="1_4a2e2"]
+[ext_resource type="Script" path="res://Scenes/Animal.gd" id="1_4u74o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ll4sc"]
+size = Vector2(118, 119)
+
+[node name="Animal" type="CharacterBody2D"]
+scale = Vector2(0.1, 0.1)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_4u74o")
+
+[node name="AnimalSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_4a2e2")
+
+[node name="AnimalCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ll4sc")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 20.0
+path_postprocessing = 1
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

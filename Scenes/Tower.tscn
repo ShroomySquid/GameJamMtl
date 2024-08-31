@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcplbif2p3oos"]
+
+[ext_resource type="PackedScene" uid="uid://i3cmbc3rwgcl" path="res://Scenes/control.tscn" id="1_7ir8f"]
+[ext_resource type="Texture2D" uid="uid://3punmk4h2lwj" path="res://tower.png" id="2_kini4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h4sj5"]
+radius = 6.08276
+
+[node name="Control" instance=ExtResource("1_7ir8f")]
+
+[node name="Tower" type="StaticBody2D" parent="." index="0"]
+
+[node name="TowerSprite" type="Sprite2D" parent="Tower" index="0"]
+texture = ExtResource("2_kini4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower" index="1"]
+shape = SubResource("CircleShape2D_h4sj5")
