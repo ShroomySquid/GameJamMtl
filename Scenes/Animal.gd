@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var end: Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 const SPEED = 150.0
+var hp = 20
 
 func _ready() -> void:
 	set_physics_process(false)
@@ -17,9 +18,9 @@ func _physics_process(_delta: float) -> void:
 
 func makepath() -> void:
 	nav_agent.target_position = end.global_position
-	#print(end.global_position)
-	#print(nav_agent.target_position)
-
-#func _on_timer_timeout():
-#	print("Timer is out!!!!!!!")
-#	makepath()
+	
+func take_damage(damage) -> void:
+	hp -= damage
+	if (hp <= 0):
+		queue_free()
+	

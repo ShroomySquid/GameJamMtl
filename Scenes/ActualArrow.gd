@@ -1,11 +1,17 @@
 extends CharacterBody2D
 
-const SPEED = 500.0
-var target = Vector2.UP
-@onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
+const SPEED = 800.0
+const damage = 5
+var target : CharacterBody2D
+var dir : Vector2
 
 func _physics_process(_delta):
-	nav_agent.target_position = target
-	var dir = global_position.direction_to(nav_agent.get_next_path_position())
-	velocity = dir * SPEED
-	move_and_slide()
+	if (is_instance_valid(target)):
+		velocity = dir * SPEED
+		move_and_slide()
+	else:
+		queue_free()
+
+func _on_area_2d_2_body_entered(body):
+	body.take_damage(damage)
+	queue_free()

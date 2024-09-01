@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://n4x23vuidhhr"]
+[gd_scene load_steps=7 format=3 uid="uid://n4x23vuidhhr"]
 
 [ext_resource type="Texture2D" uid="uid://3punmk4h2lwj" path="res://PNG/tower.png" id="2_kini4"]
 [ext_resource type="Script" path="res://Scenes/Tower.gd" id="2_q23ir"]
 [ext_resource type="Texture2D" uid="uid://hn3r0vi0ph6o" path="res://PNG/arrow.png" id="3_7qo70"]
+[ext_resource type="Script" path="res://Scenes/ArrowContainer.gd" id="4_4j88r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wooqg"]
 radius = 100.0
@@ -37,5 +38,9 @@ texture = ExtResource("3_7qo70")
 [node name="MandatoryCollision2" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jbivl")
 
+[node name="ArrowContainer" type="Node2D" parent="."]
+script = ExtResource("4_4j88r")
+
+[connection signal="shooting" from="." to="ArrowContainer" method="_on_tower_shooting"]
 [connection signal="body_entered" from="ShootingRange2" to="." method="_on_shooting_range_2_body_entered"]
 [connection signal="body_exited" from="ShootingRange2" to="." method="_on_shooting_range_2_body_exited"]
