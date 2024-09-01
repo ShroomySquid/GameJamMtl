@@ -12,10 +12,10 @@ func _ready():
 
 func _process(_delta):
 	if (currTargets):
-		$ShootingPart2.look_at(currTargets[0].position)
+		$ShootingPart2.look_at(currTargets[0].global_position)
 		if (ready_to_shoot):
 			ready_to_shoot = false
-			shooting.emit()
+			shooting.emit(position, currTargets[0].global_position)
 			await get_tree().create_timer(0.75).timeout
 			ready_to_shoot = true
 

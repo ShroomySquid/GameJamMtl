@@ -483,7 +483,10 @@ shape = SubResource("RectangleShape2D_2w67m")
 [node name="TowerContainer" type="Node2D" parent="." index="2"]
 
 [node name="Tower" parent="TowerContainer" index="0" instance=ExtResource("4_nrbt5")]
-position = Vector2(178, -103)
+position = Vector2(-36.5, -90.5)
+
+[node name="Tower2" parent="TowerContainer" index="1" instance=ExtResource("4_nrbt5")]
+position = Vector2(-170.5, 121)
 
 [node name="ArrowContainer" type="Node2D" parent="." index="3"]
 script = ExtResource("4_wuy8e")
