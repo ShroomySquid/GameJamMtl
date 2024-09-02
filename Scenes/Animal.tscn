@@ -1,23 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4etb1s1x12y0"]
+[gd_scene load_steps=7 format=3 uid="uid://d4etb1s1x12y0"]
 
 [ext_resource type="Script" path="res://Scenes/Animal.gd" id="1_4u74o"]
-[ext_resource type="Texture2D" uid="uid://dpgo784253x2w" path="res://PNG/icon.svg" id="2_acd14"]
+[ext_resource type="Texture2D" uid="uid://beyaa80lvar04" path="res://PNG/duckbody.png" id="2_quas1"]
+[ext_resource type="Texture2D" uid="uid://dx1k424gms51b" path="res://PNG/ducklegs.png" id="3_p0xiw"]
+[ext_resource type="Texture2D" uid="uid://bk7o6hp3gjiby" path="res://PNG/duckhead.png" id="4_lpbm3"]
+[ext_resource type="Texture2D" uid="uid://cng6q4esielqp" path="res://PNG/duckextra.png" id="5_aas37"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ll4sc"]
-size = Vector2(118, 119)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_krb73"]
+radius = 4.41177
+height = 8.82353
 
 [node name="Animal" type="CharacterBody2D"]
-scale = Vector2(0.1, 0.1)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_4u74o")
 
-[node name="AnimalSprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_acd14")
+[node name="AnimalBody" type="Sprite2D" parent="."]
+texture = ExtResource("2_quas1")
 
 [node name="AnimalCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_ll4sc")
+position = Vector2(0, -1)
+scale = Vector2(1.37573, 0.892291)
+shape = SubResource("CapsuleShape2D_krb73")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 20.0
@@ -25,6 +29,19 @@ path_postprocessing = 1
 debug_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
 autostart = true
+
+[node name="AnimalLegs" type="Sprite2D" parent="."]
+position = Vector2(0, 4)
+texture = ExtResource("3_p0xiw")
+
+[node name="AnimalHead" type="Sprite2D" parent="."]
+position = Vector2(12, -7)
+texture = ExtResource("4_lpbm3")
+
+[node name="AnimalExtra" type="Sprite2D" parent="."]
+position = Vector2(-4, -7)
+texture = ExtResource("5_aas37")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

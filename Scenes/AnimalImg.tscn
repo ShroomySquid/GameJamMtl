@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6ndme768bixb"]
+
+[ext_resource type="PackedScene" uid="uid://i3cmbc3rwgcl" path="res://Scenes/control.tscn" id="1_un4im"]
+[ext_resource type="Texture2D" uid="uid://bk7o6hp3gjiby" path="res://PNG/duckhead.png" id="2_b44br"]
+[ext_resource type="Texture2D" uid="uid://dx1k424gms51b" path="res://PNG/ducklegs.png" id="3_xuosd"]
+[ext_resource type="Texture2D" uid="uid://beyaa80lvar04" path="res://PNG/duckbody.png" id="4_tuuhy"]
+[ext_resource type="Texture2D" uid="uid://cng6q4esielqp" path="res://PNG/duckextra.png" id="5_ycyjp"]
+
+[node name="AnimalControl" instance=ExtResource("1_un4im")]
+
+[node name="AnimalImg" type="Node2D" parent="." index="0"]
+position = Vector2(757, 404)
+scale = Vector2(10, 10)
+
+[node name="Head" type="Sprite2D" parent="AnimalImg" index="0"]
+position = Vector2(12.2, -8)
+texture = ExtResource("2_b44br")
+
+[node name="Legs" type="Sprite2D" parent="AnimalImg" index="1"]
+position = Vector2(1.4, 5.2)
+texture = ExtResource("3_xuosd")
+
+[node name="Torso" type="Sprite2D" parent="AnimalImg" index="2"]
+texture = ExtResource("4_tuuhy")
+
+[node name="Extra" type="Sprite2D" parent="AnimalImg" index="3"]
+position = Vector2(-4.6, -6.8)
+texture = ExtResource("5_ycyjp")

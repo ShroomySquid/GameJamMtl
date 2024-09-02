@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://i3cmbc3rwgcl"]
+[gd_scene load_steps=2 format=3 uid="uid://i3cmbc3rwgcl"]
+
+[ext_resource type="Script" path="res://Scenes/control.gd" id="1_up5d4"]
 
 [node name="Control" type="Node2D"]
 position = Vector2(738, 379)
+script = ExtResource("1_up5d4")

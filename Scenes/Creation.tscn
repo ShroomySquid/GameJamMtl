@@ -1,5 +1,267 @@
-[gd_scene load_steps=2 format=3 uid="uid://crks3lfrse0t5"]
+[gd_scene load_steps=9 format=3 uid="uid://crks3lfrse0t5"]
 
 [ext_resource type="PackedScene" uid="uid://i3cmbc3rwgcl" path="res://Scenes/control.tscn" id="1_xc3br"]
+[ext_resource type="Texture2D" uid="uid://bufdax8e4h6xo" path="res://PNG/arrowright.png" id="2_c0d16"]
+[ext_resource type="Script" path="res://Scenes/CVCreationScreen.gd" id="2_l6ouf"]
+[ext_resource type="Texture2D" uid="uid://brwdesb8xdmfj" path="res://PNG/arrowleft.png" id="3_d7hqi"]
+[ext_resource type="Texture2D" uid="uid://bk7o6hp3gjiby" path="res://PNG/duckhead.png" id="3_kbsjr"]
+[ext_resource type="Texture2D" uid="uid://beyaa80lvar04" path="res://PNG/duckbody.png" id="5_ueho8"]
+[ext_resource type="Texture2D" uid="uid://cng6q4esielqp" path="res://PNG/duckextra.png" id="6_5k6s7"]
+[ext_resource type="Texture2D" uid="uid://dx1k424gms51b" path="res://PNG/ducklegs.png" id="6_p4c4y"]
 
 [node name="Control" instance=ExtResource("1_xc3br")]
+
+[node name="CVCreationScreen" type="CanvasLayer" parent="." index="0"]
+process_mode = 3
+script = ExtResource("2_l6ouf")
+
+[node name="BackgroundColor" type="ColorRect" parent="CVCreationScreen" index="0"]
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 1969.0
+offset_bottom = 1124.0
+color = Color(0.227451, 0.568627, 0.137255, 1)
+
+[node name="MarginMiddle" type="MarginContainer" parent="CVCreationScreen" index="1"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -307.0
+offset_right = 307.0
+offset_bottom = 776.0
+grow_horizontal = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 192
+
+[node name="BodyPartsContainer" type="VBoxContainer" parent="CVCreationScreen/MarginMiddle" index="0"]
+layout_mode = 2
+
+[node name="HeadContainer" type="HBoxContainer" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer" index="0"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/HeadContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="LeftHeadBtn" type="TextureButton" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/HeadContainer/MarginContainer" index="0"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture_normal = ExtResource("2_c0d16")
+
+[node name="HeadLabel" type="Label" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/HeadContainer" index="1"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Duck Head
+"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/HeadContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="RightHeadBtn" type="TextureButton" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/HeadContainer/MarginContainer2" index="0"]
+layout_mode = 2
+texture_normal = ExtResource("3_d7hqi")
+
+[node name="BodyContainer" type="HBoxContainer" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer" index="1"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/BodyContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="LeftBodyBtn" type="TextureButton" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/BodyContainer/MarginContainer" index="0"]
+layout_mode = 2
+texture_normal = ExtResource("2_c0d16")
+
+[node name="BodyLabel" type="Label" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/BodyContainer" index="1"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Duck Body
+"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/BodyContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="RightBodyBtn" type="TextureButton" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/BodyContainer/MarginContainer2" index="0"]
+layout_mode = 2
+texture_normal = ExtResource("3_d7hqi")
+
+[node name="LegContainer" type="HBoxContainer" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer" index="2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/LegContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="LeftLegBtn" type="TextureButton" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/LegContainer/MarginContainer" index="0"]
+layout_mode = 2
+texture_normal = ExtResource("2_c0d16")
+
+[node name="LegLabel" type="Label" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/LegContainer" index="1"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Duck Legs
+"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/LegContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="RightLegBtn" type="TextureButton" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/LegContainer/MarginContainer2" index="0"]
+layout_mode = 2
+texture_normal = ExtResource("3_d7hqi")
+
+[node name="ExtraContainer" type="HBoxContainer" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer" index="3"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/ExtraContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="LeftExtraBtn" type="TextureButton" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/ExtraContainer/MarginContainer" index="0"]
+layout_mode = 2
+texture_normal = ExtResource("2_c0d16")
+
+[node name="ExtraLabel" type="Label" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/ExtraContainer" index="1"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Duck Wings
+"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/ExtraContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="RightExtraBtn" type="TextureButton" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/ExtraContainer/MarginContainer2" index="0"]
+layout_mode = 2
+texture_normal = ExtResource("3_d7hqi")
+
+[node name="FinishBtn" type="Button" parent="CVCreationScreen" index="2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -4.0
+offset_right = 4.0
+offset_bottom = 8.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Finish Creation
+"
+
+[node name="AnimalImg" type="Node2D" parent="CVCreationScreen" index="3"]
+position = Vector2(301, 496)
+scale = Vector2(16, 16)
+
+[node name="Head" type="Sprite2D" parent="CVCreationScreen/AnimalImg" index="0"]
+position = Vector2(11.5, -6.7)
+texture = ExtResource("3_kbsjr")
+
+[node name="Legs" type="Sprite2D" parent="CVCreationScreen/AnimalImg" index="1"]
+position = Vector2(-0.200006, 3.9)
+texture = ExtResource("6_p4c4y")
+
+[node name="Torso" type="Sprite2D" parent="CVCreationScreen/AnimalImg" index="2"]
+texture = ExtResource("5_ueho8")
+
+[node name="Extra" type="Sprite2D" parent="CVCreationScreen/AnimalImg" index="3"]
+position = Vector2(-4.6, -6.8)
+texture = ExtResource("6_5k6s7")
+
+[node name="MarginRight" type="MarginContainer" parent="CVCreationScreen" index="4"]
+anchors_preset = -1
+anchor_left = 0.89
+anchor_right = 1.0
+offset_left = -500.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 240
+
+[node name="DescriptionContainer" type="VBoxContainer" parent="CVCreationScreen/MarginRight" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 105
+
+[node name="HeadDescription" type="Label" parent="CVCreationScreen/MarginRight/DescriptionContainer" index="0"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Occasionally quack to speed up a nearby animal"
+
+[node name="BodyDescription" type="Label" parent="CVCreationScreen/MarginRight/DescriptionContainer" index="1"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "20 more animal spawned, -10 max HP"
+
+[node name="LegsDescription" type="Label" parent="CVCreationScreen/MarginRight/DescriptionContainer" index="2"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10 more animal spawned"
+
+[node name="ExtraDescription" type="Label" parent="CVCreationScreen/MarginRight/DescriptionContainer" index="3"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "+2 speed, -1 armor"
+
+[node name="MarginBotLeft" type="MarginContainer" parent="CVCreationScreen" index="5"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_bottom = 256
+
+[node name="StatsContainer" type="GridContainer" parent="CVCreationScreen/MarginBotLeft" index="0"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="HPLabel" type="Label" parent="CVCreationScreen/MarginBotLeft/StatsContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "HP: 20"
+
+[node name="ArmorLabel" type="Label" parent="CVCreationScreen/MarginBotLeft/StatsContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Armor: -1"
+
+[node name="SpeedLabel" type="Label" parent="CVCreationScreen/MarginBotLeft/StatsContainer" index="2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Speed: 7"
+
+[node name="StaminaLabel" type="Label" parent="CVCreationScreen/MarginBotLeft/StatsContainer" index="3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Stamina: 50
+"
+
+[node name="SpawnLabel" type="Label" parent="CVCreationScreen/MarginBotLeft/StatsContainer" index="4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Animals: 80"
+
+[connection signal="pressed" from="CVCreationScreen/MarginMiddle/BodyPartsContainer/HeadContainer/MarginContainer/LeftHeadBtn" to="CVCreationScreen" method="_on_left_head_btn_pressed"]
+[connection signal="pressed" from="CVCreationScreen/MarginMiddle/BodyPartsContainer/HeadContainer/MarginContainer2/RightHeadBtn" to="CVCreationScreen" method="_on_right_head_btn_pressed"]
+[connection signal="pressed" from="CVCreationScreen/MarginMiddle/BodyPartsContainer/BodyContainer/MarginContainer/LeftBodyBtn" to="CVCreationScreen" method="_on_left_body_btn_pressed"]
+[connection signal="pressed" from="CVCreationScreen/MarginMiddle/BodyPartsContainer/BodyContainer/MarginContainer2/RightBodyBtn" to="CVCreationScreen" method="_on_right_body_btn_pressed"]
+[connection signal="pressed" from="CVCreationScreen/MarginMiddle/BodyPartsContainer/LegContainer/MarginContainer/LeftLegBtn" to="CVCreationScreen" method="_on_left_leg_btn_pressed"]
+[connection signal="pressed" from="CVCreationScreen/MarginMiddle/BodyPartsContainer/LegContainer/MarginContainer2/RightLegBtn" to="CVCreationScreen" method="_on_right_leg_btn_pressed"]
+[connection signal="pressed" from="CVCreationScreen/MarginMiddle/BodyPartsContainer/ExtraContainer/MarginContainer/LeftExtraBtn" to="CVCreationScreen" method="_on_left_extra_btn_pressed"]
+[connection signal="pressed" from="CVCreationScreen/MarginMiddle/BodyPartsContainer/ExtraContainer/MarginContainer2/RightExtraBtn" to="CVCreationScreen" method="_on_right_extra_btn_pressed"]
+[connection signal="pressed" from="CVCreationScreen/FinishBtn" to="CVCreationScreen" method="_on_finish_btn_pressed"]
