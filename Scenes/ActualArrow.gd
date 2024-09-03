@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 800.0
+const SPEED = 900.0
 const damage = 5
 var target : CharacterBody2D
 var dir : Vector2
