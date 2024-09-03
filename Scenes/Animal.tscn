@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4etb1s1x12y0"]
+[gd_scene load_steps=11 format=3 uid="uid://d4etb1s1x12y0"]
 
 [ext_resource type="Script" path="res://Scenes/Animal.gd" id="1_4u74o"]
 [ext_resource type="Texture2D" uid="uid://beyaa80lvar04" path="res://PNG/duckbody.png" id="2_quas1"]
@@ -9,6 +9,16 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_krb73"]
 radius = 4.41177
 height = 8.82353
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c8ylm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3e30"]
+bg_color = Color(1, 0.337255, 0.317647, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ltpw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r37st"]
+bg_color = Color(0.25098, 0.709804, 0.290196, 1)
 
 [node name="Animal" type="CharacterBody2D"]
 collision_layer = 2
@@ -43,5 +53,27 @@ texture = ExtResource("4_lpbm3")
 [node name="AnimalExtra" type="Sprite2D" parent="."]
 position = Vector2(-4, -7)
 texture = ExtResource("5_aas37")
+
+[node name="HPBar" type="ProgressBar" parent="."]
+offset_left = -11.0
+offset_top = -24.0
+offset_right = 109.0
+offset_bottom = 3.0
+scale = Vector2(0.2, 0.2)
+theme_override_styles/background = SubResource("StyleBoxEmpty_c8ylm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_l3e30")
+value = 100.0
+show_percentage = false
+
+[node name="StaminaBar" type="ProgressBar" parent="."]
+offset_left = -11.0
+offset_top = -18.0
+offset_right = 109.0
+offset_bottom = 9.0
+scale = Vector2(0.2, 0.2)
+theme_override_styles/background = SubResource("StyleBoxEmpty_7ltpw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_r37st")
+value = 100.0
+show_percentage = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

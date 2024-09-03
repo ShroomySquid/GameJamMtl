@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmbvub28u4ly1"]
+
+[ext_resource type="AudioStream" uid="uid://bmtqcusa6l8pl" path="res://Music/Part1_LayerA_v0_LOOP.wav" id="1_epobl"]
+[ext_resource type="Script" path="res://Scenes/music.gd" id="1_h1g0i"]
+[ext_resource type="AudioStream" uid="uid://s4l0l6j6m0v5" path="res://Music/Part1_LayerB_v0_LOOP.wav" id="2_872s8"]
+[ext_resource type="AudioStream" uid="uid://dvey531sex66v" path="res://Music/Part1_LayerC_v0_LOOP.wav" id="3_u4e4u"]
+
+[node name="Music" type="Node2D"]
+script = ExtResource("1_h1g0i")
+
+[node name="AudioA" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("1_epobl")
+autoplay = true
+
+[node name="AudioB" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("2_872s8")
+autoplay = true
+
+[node name="AudioC" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("3_u4e4u")
+autoplay = true
+
+[connection signal="finished" from="AudioA" to="." method="_on_audio_a_finished"]
+[connection signal="finished" from="AudioB" to="." method="_on_audio_b_finished"]
+[connection signal="finished" from="AudioC" to="." method="_on_audio_c_finished"]

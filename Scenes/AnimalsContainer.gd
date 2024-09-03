@@ -4,7 +4,8 @@ var animal_tscn = preload("res://Scenes/Animal.tscn")
 var spawned := 0
 
 func _ready():
-	pass # Replace with function body.
+	if Global.legs_index == 3:
+		$SpawnTimer.wait_time = 0.5
 
 func _process(_delta):
 	pass

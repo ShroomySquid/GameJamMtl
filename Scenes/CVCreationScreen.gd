@@ -54,6 +54,7 @@ func update_extra():
 	update_stats()
 
 func _on_finish_btn_pressed():
+	Music.start_audio_b()
 	get_tree().change_scene_to_file("res://Scenes/Race.tscn")
 
 func _on_left_head_btn_pressed():

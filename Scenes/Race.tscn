@@ -463,7 +463,7 @@ navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_xdii0")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w67m"]
-size = Vector2(34, 23.5)
+size = Vector2(34, 34.5)
 
 [node name="Race" instance=ExtResource("1_poe8i")]
 scale = Vector2(2, 2)
@@ -477,17 +477,29 @@ layer_0/tile_data = PackedInt32Array(-524275, 327680, 4, -589811, 327680, 4, -52
 
 [node name="End" type="Area2D" parent="." index="1"]
 position = Vector2(0, 213)
+collision_layer = 16
+collision_mask = 2
 
 [node name="EndCollision" type="CollisionShape2D" parent="End" index="0"]
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_2w67m")
 
 [node name="TowerContainer" type="Node2D" parent="." index="2"]
 
 [node name="Tower" parent="TowerContainer" index="0" instance=ExtResource("4_nrbt5")]
-position = Vector2(-36.5, -90.5)
+position = Vector2(169, -92)
 
 [node name="Tower2" parent="TowerContainer" index="1" instance=ExtResource("4_nrbt5")]
-position = Vector2(-14, 99.5)
+position = Vector2(173, -16)
+
+[node name="Tower3" parent="TowerContainer" index="2" instance=ExtResource("4_nrbt5")]
+position = Vector2(-169, 56.5)
+
+[node name="Tower4" parent="TowerContainer" index="3" instance=ExtResource("4_nrbt5")]
+position = Vector2(-169, 119)
+
+[node name="Tower5" parent="TowerContainer" index="4" instance=ExtResource("4_nrbt5")]
+position = Vector2(-34, 203)
 
 [node name="AnimalsContainer" type="Node2D" parent="." index="3"]
 position = Vector2(-216.5, -128.5)
@@ -526,6 +538,7 @@ offset_right = -310.5
 offset_bottom = -118.0
 text = "Start"
 
+[connection signal="body_entered" from="End" to="." method="_on_end_body_entered"]
 [connection signal="timeout" from="AnimalsContainer/SpawnTimer" to="AnimalsContainer" method="_on_spawn_timer_timeout"]
 [connection signal="pressed" from="AnimalCreationBtn" to="." method="_on_animal_creation_btn_pressed"]
 [connection signal="pressed" from="PauseBtn" to="." method="_on_pause_btn_pressed"]

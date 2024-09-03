@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/ArrowContainer.gd" id="4_4j88r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wooqg"]
-radius = 100.0
+radius = 84.5532
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jbivl"]
 radius = 6.0

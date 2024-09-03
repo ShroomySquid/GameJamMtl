@@ -30,7 +30,7 @@ func _process(_delta):
 
 func update_stats():
 	hp = 30
-	to_spawn = 5
+	to_spawn = 50
 	armor = 0
 	stamina = 50
 	speed = 5
