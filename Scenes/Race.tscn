@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcxldh6y2teth"]
+[gd_scene load_steps=13 format=3 uid="uid://dcxldh6y2teth"]
 
 [ext_resource type="PackedScene" uid="uid://i3cmbc3rwgcl" path="res://Scenes/control.tscn" id="1_poe8i"]
 [ext_resource type="Texture2D" uid="uid://cx8smci0hmw8" path="res://PNG/minimalist_tilemap.png" id="2_jws8h"]
 [ext_resource type="Script" path="res://Scenes/Race.gd" id="2_rqdr3"]
 [ext_resource type="PackedScene" uid="uid://n4x23vuidhhr" path="res://Scenes/Tower.tscn" id="4_nrbt5"]
 [ext_resource type="Script" path="res://Scenes/AnimalsContainer.gd" id="4_x2wqw"]
+[ext_resource type="Script" path="res://Scenes/End.gd" id="4_x207n"]
+[ext_resource type="Script" path="res://Scenes/EndUnitCounter.gd" id="7_r23tn"]
+[ext_resource type="Script" path="res://Scenes/Camera2D.gd" id="8_aeclc"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_57r3v"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -479,6 +482,7 @@ layer_0/tile_data = PackedInt32Array(-524275, 327680, 4, -589811, 327680, 4, -52
 position = Vector2(0, 213)
 collision_layer = 16
 collision_mask = 2
+script = ExtResource("4_x207n")
 
 [node name="EndCollision" type="CollisionShape2D" parent="End" index="0"]
 position = Vector2(0, 3.5)
@@ -544,7 +548,23 @@ offset_right = -310.5
 offset_bottom = -118.0
 text = "Start"
 
-[connection signal="body_entered" from="End" to="." method="_on_end_body_entered"]
+[node name="Camera2D" type="Camera2D" parent="." index="7"]
+script = ExtResource("8_aeclc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="8"]
+
+[node name="EndUnitCounter" type="Label" parent="CanvasLayer" index="0"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -1080.0
+offset_right = 1.0
+offset_bottom = -1057.0
+grow_vertical = 0
+script = ExtResource("7_r23tn")
+
+[connection signal="body_entered" from="End" to="AnimalsContainer" method="_on_end_body_entered"]
+[connection signal="body_entered" from="End" to="CanvasLayer/EndUnitCounter" method="_on_end_body_entered"]
 [connection signal="timeout" from="AnimalsContainer/SpawnTimer" to="AnimalsContainer" method="_on_spawn_timer_timeout"]
 [connection signal="pressed" from="AnimalCreationBtn" to="." method="_on_animal_creation_btn_pressed"]
 [connection signal="pressed" from="PauseBtn" to="." method="_on_pause_btn_pressed"]

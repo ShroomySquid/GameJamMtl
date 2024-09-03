@@ -31,7 +31,7 @@ offset_right = 307.0
 offset_bottom = 776.0
 grow_horizontal = 2
 size_flags_horizontal = 8
-theme_override_constants/margin_left = 64
+theme_override_constants/margin_left = 256
 theme_override_constants/margin_top = 192
 
 [node name="BodyPartsContainer" type="VBoxContainer" parent="CVCreationScreen/MarginMiddle" index="0"]
@@ -65,6 +65,12 @@ theme_override_constants/margin_top = 15
 layout_mode = 2
 texture_normal = ExtResource("3_d7hqi")
 
+[node name="HeadDescription" type="Label" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/HeadContainer" index="3"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Occasionally quack to speed up a nearby animal"
+
 [node name="BodyContainer" type="HBoxContainer" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer" index="1"]
 layout_mode = 2
 
@@ -91,6 +97,12 @@ theme_override_constants/margin_top = 15
 [node name="RightBodyBtn" type="TextureButton" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/BodyContainer/MarginContainer2" index="0"]
 layout_mode = 2
 texture_normal = ExtResource("3_d7hqi")
+
+[node name="BodyDescription" type="Label" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/BodyContainer" index="3"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "20 more animal spawned, -10 max HP"
 
 [node name="LegContainer" type="HBoxContainer" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer" index="2"]
 layout_mode = 2
@@ -119,6 +131,12 @@ theme_override_constants/margin_top = 15
 layout_mode = 2
 texture_normal = ExtResource("3_d7hqi")
 
+[node name="LegsDescription" type="Label" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/LegContainer" index="3"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10 more animal spawned"
+
 [node name="ExtraContainer" type="HBoxContainer" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer" index="3"]
 layout_mode = 2
 
@@ -146,6 +164,12 @@ theme_override_constants/margin_top = 15
 layout_mode = 2
 texture_normal = ExtResource("3_d7hqi")
 
+[node name="ExtraDescription" type="Label" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer/ExtraContainer" index="3"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "+2 speed, -1 armor"
+
 [node name="FinishBtn" type="Button" parent="CVCreationScreen" index="2"]
 anchors_preset = 5
 anchor_left = 0.5
@@ -159,7 +183,7 @@ text = "Finish Creation
 "
 
 [node name="AnimalImg" type="Node2D" parent="CVCreationScreen" index="3"]
-position = Vector2(301, 496)
+position = Vector2(311, 378)
 scale = Vector2(16, 16)
 
 [node name="Head" type="Sprite2D" parent="CVCreationScreen/AnimalImg" index="0"]
@@ -177,44 +201,7 @@ texture = ExtResource("5_ueho8")
 position = Vector2(-4.6, -6.8)
 texture = ExtResource("6_5k6s7")
 
-[node name="MarginRight" type="MarginContainer" parent="CVCreationScreen" index="4"]
-anchors_preset = -1
-anchor_left = 0.89
-anchor_right = 1.0
-offset_left = -500.0
-offset_bottom = 40.0
-grow_horizontal = 0
-theme_override_constants/margin_top = 240
-
-[node name="DescriptionContainer" type="VBoxContainer" parent="CVCreationScreen/MarginRight" index="0"]
-layout_mode = 2
-theme_override_constants/separation = 105
-
-[node name="HeadDescription" type="Label" parent="CVCreationScreen/MarginRight/DescriptionContainer" index="0"]
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Occasionally quack to speed up a nearby animal"
-
-[node name="BodyDescription" type="Label" parent="CVCreationScreen/MarginRight/DescriptionContainer" index="1"]
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "20 more animal spawned, -10 max HP"
-
-[node name="LegsDescription" type="Label" parent="CVCreationScreen/MarginRight/DescriptionContainer" index="2"]
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "10 more animal spawned"
-
-[node name="ExtraDescription" type="Label" parent="CVCreationScreen/MarginRight/DescriptionContainer" index="3"]
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "+2 speed, -1 armor"
-
-[node name="MarginBotLeft" type="MarginContainer" parent="CVCreationScreen" index="5"]
+[node name="MarginBotLeft" type="MarginContainer" parent="CVCreationScreen" index="4"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0

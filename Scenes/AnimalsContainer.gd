@@ -17,3 +17,7 @@ func _on_spawn_timer_timeout():
 	spawned += 1
 	if (spawned >= Global.to_spawn):
 		$SpawnTimer.stop()
+
+func _on_end_body_entered(body):
+	body.queue_free()
+	pass # Replace with function body.

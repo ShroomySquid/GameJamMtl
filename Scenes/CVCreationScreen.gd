@@ -33,24 +33,24 @@ func update_stats():
 func update_head():
 	$MarginMiddle/BodyPartsContainer/HeadContainer/HeadLabel.text = head_text[Global.head_index]
 	$AnimalImg/Head.texture = ResourceLoader.load(head_texture[Global.head_index])
-	$MarginRight/DescriptionContainer/HeadDescription.text = head_description[Global.head_index]
+	$MarginMiddle/BodyPartsContainer/HeadContainer/HeadDescription.text = head_description[Global.head_index]
 
 func update_body():
 	$MarginMiddle/BodyPartsContainer/BodyContainer/BodyLabel.text = body_text[Global.body_index]
 	$AnimalImg/Torso.texture = ResourceLoader.load(body_texture[Global.body_index])
-	$MarginRight/DescriptionContainer/BodyDescription.text = body_description[Global.body_index]
+	$MarginMiddle/BodyPartsContainer/BodyContainer/BodyDescription.text = body_description[Global.body_index]
 	update_stats()
 
 func update_legs():
 	$MarginMiddle/BodyPartsContainer/LegContainer/LegLabel.text = legs_text[Global.legs_index]
 	$AnimalImg/Legs.texture = ResourceLoader.load(legs_texture[Global.legs_index])
-	$MarginRight/DescriptionContainer/LegsDescription.text = legs_description[Global.legs_index]
+	$MarginMiddle/BodyPartsContainer/LegContainer/LegsDescription.text = legs_description[Global.legs_index]
 	update_stats()
 
 func update_extra():
 	$MarginMiddle/BodyPartsContainer/ExtraContainer/ExtraLabel.text = extra_text[Global.extra_index]
 	$AnimalImg/Extra.texture = ResourceLoader.load(extra_texture[Global.extra_index])
-	$MarginRight/DescriptionContainer/ExtraDescription.text = extra_description[Global.extra_index]
+	$MarginMiddle/BodyPartsContainer/ExtraContainer/ExtraDescription.text = extra_description[Global.extra_index]
 	update_stats()
 
 func _on_finish_btn_pressed():
