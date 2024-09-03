@@ -8,7 +8,7 @@ func _ready():
 
 	# Optionally, you can set the size of the label if needed
 	#custom_minimum_size = Vector2(100, 40)  # Adjust to your desired size
-	position = Vector2(-330, -180)  # Ensure it's positioned at the top-left
+	position = Vector2(150, -180)  # Ensure it's positioned at the top-left
 	update_label()
 
 func _process(delta):
