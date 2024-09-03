@@ -561,6 +561,7 @@ offset_top = -1080.0
 offset_right = 1.0
 offset_bottom = -1057.0
 grow_vertical = 0
+text = "Yo mama"
 script = ExtResource("7_r23tn")
 
 [connection signal="body_entered" from="End" to="AnimalsContainer" method="_on_end_body_entered"]
