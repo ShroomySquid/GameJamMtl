@@ -6,7 +6,6 @@ var spawned := 0
 func _ready():
 	if Global.legs_index == 3:
 		$SpawnTimer.wait_time = 0.5
-
 func _process(_delta):
 	pass
 

@@ -5,6 +5,7 @@ var to_spawn := 50
 var armor := 0
 var stamina := 50
 var speed := 5
+
 var head_index := 0:
 	set(new_val):
 		head_index = new_val
