@@ -6,19 +6,38 @@ func _ready():
 func _process(_delta):
 	pass
 
-func start_audio_c():
+func start_audio_c(wait_s):
 	var new_audio = -80
+	
+	if (wait_s > 0):
+		await get_tree().create_timer(wait_s).timeout
+
 	while (new_audio < 0):
-		await get_tree().create_timer(0.02).timeout
+		await get_tree().create_timer(0.005).timeout
 		$AudioC.set_volume_db(new_audio)
 		new_audio += 1
+			
+func end_audio_c():
+	var new_audio = 0
+	while (new_audio > -80):
+		await get_tree().create_timer(0.01).timeout
+		$AudioC.set_volume_db(new_audio)
+		new_audio -= 1
 
 func start_audio_b():
 	var new_audio = -80
 	while (new_audio < 0):
-		await get_tree().create_timer(0.01).timeout
+		await get_tree().create_timer(0.00001).timeout
 		$AudioB.set_volume_db(new_audio)
 		new_audio += 1
+		
+func end_audio_b():
+	var new_audio = 0
+	while (new_audio > -80):
+		await get_tree().create_timer(0.01).timeout
+		$AudioB.set_volume_db(new_audio)
+		new_audio -= 1
+
 
 func _on_audio_a_finished():
 	$AudioA.play()

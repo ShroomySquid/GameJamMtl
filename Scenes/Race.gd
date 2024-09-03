@@ -5,6 +5,8 @@ var is_race_on = false
 func _ready():
 	get_tree().paused = true
 	$PauseBtn.hide()
+	Music.get_child(0).set_volume_db(-12)
+	Music.get_child(1).set_volume_db(0)
 	Music.get_child(2).set_volume_db(-80)
 
 func _process(_delta):
@@ -14,9 +16,12 @@ func _on_start_btn_pressed():
 	$PauseBtn.show()
 	$StartBtn.disabled = true
 	_on_pause_btn_pressed()
-	Music.start_audio_c()
+	Music.get_child(0).set_volume_db(0)
+	Music.get_child(1).set_volume_db(0)
+	Music.start_audio_c(29.14)
 
 func _on_animal_creation_btn_pressed():
+	Music.get_child(0).set_volume_db(0)
 	Music.get_child(1).set_volume_db(-80)
 	Music.get_child(2).set_volume_db(-80)
 	get_tree().change_scene_to_file("res://Scenes/Creation.tscn")
@@ -26,10 +31,14 @@ func _on_pause_btn_pressed():
 		$PauseBtn.text = "Unpause"
 		is_race_on = false
 		get_tree().paused = true
+		Music.end_audio_b()
+		Music.end_audio_c()
 	else:
 		$PauseBtn.text = "Pause"
 		is_race_on = true
 		get_tree().paused = false
+		Music.get_child(1).set_volume_db(0)
+		Music.start_audio_c(0)
 
 func _on_end_body_entered(body):
 	body.queue_free()

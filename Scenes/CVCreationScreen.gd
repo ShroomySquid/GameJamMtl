@@ -54,7 +54,8 @@ func update_extra():
 	update_stats()
 
 func _on_finish_btn_pressed():
-	Music.start_audio_b()
+	# Music.start_audio_b()
+	# TODO: Start fanfare SFX  here
 	get_tree().change_scene_to_file("res://Scenes/Race.tscn")
 
 func _on_left_head_btn_pressed():
@@ -104,4 +105,3 @@ func _on_right_extra_btn_pressed():
 	if (Global.extra_index < 0):
 		Global.extra_index = 3
 	update_extra()
-
