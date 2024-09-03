@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var end: Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
+var obj_name := "animal"
 var hp := Global.hp
 var speed := Global.speed
 var stamina := Global.stamina
@@ -19,6 +20,7 @@ var legs_texture = ["res://PNG/ducklegs.png", "res://PNG/horselegs.png", "res://
 var extra_texture = ["res://PNG/duckextra.png", "res://PNG/horsetail.png", "res://PNG/lizardextra.png", "res://PNG/crabextra.png"]
 @onready var hp_bar = $HPBar
 @onready var stam_bar = $StaminaBar
+signal hatch
 
 func _ready() -> void:
 	set_physics_process(false)
@@ -60,12 +62,13 @@ func take_damage(damage) -> void:
 			queue_free()
 	
 func _on_timer_timeout():
+	if Global.head_index == 0 and randi_range(1, 100) == 1:
+		hatch.emit(global_position)
 	if Global.head_index == 2 and hp < Global.hp:
 		hp_reg_counter += 1
 		if hp_reg_counter >= 5:
 			hp += 1
 			hp_reg_counter = 0
-			#print(self, hp)
 	if (on_recovery):
 		if (Global.head_index == 1):
 			stamina += 2

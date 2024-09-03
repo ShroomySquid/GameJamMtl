@@ -69,7 +69,7 @@ texture_normal = ExtResource("3_d7hqi")
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Occasionally quack to speed up a nearby animal"
+text = "Occasionally Lay an egg with a duckling inside"
 
 [node name="BodyContainer" type="HBoxContainer" parent="CVCreationScreen/MarginMiddle/BodyPartsContainer" index="1"]
 layout_mode = 2

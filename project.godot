@@ -40,6 +40,8 @@ input_h_key={
 2d_physics/layer_3="tower"
 2d_physics/layer_4="arrow"
 2d_physics/layer_5="End"
+2d_physics/layer_6="egg"
+2d_physics/layer_7="egg_spawner"
 
 [rendering]
 

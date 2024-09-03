@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dcxldh6y2teth"]
+[gd_scene load_steps=14 format=3 uid="uid://dcxldh6y2teth"]
 
 [ext_resource type="PackedScene" uid="uid://i3cmbc3rwgcl" path="res://Scenes/control.tscn" id="1_poe8i"]
 [ext_resource type="Texture2D" uid="uid://cx8smci0hmw8" path="res://PNG/minimalist_tilemap.png" id="2_jws8h"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://n4x23vuidhhr" path="res://Scenes/Tower.tscn" id="4_nrbt5"]
 [ext_resource type="Script" path="res://Scenes/AnimalsContainer.gd" id="4_x2wqw"]
 [ext_resource type="Script" path="res://Scenes/End.gd" id="4_x207n"]
+[ext_resource type="Script" path="res://Scenes/EggContainer.gd" id="6_kmbnb"]
 [ext_resource type="Script" path="res://Scenes/EndUnitCounter.gd" id="7_r23tn"]
 [ext_resource type="Script" path="res://Scenes/Camera2D.gd" id="8_aeclc"]
 
@@ -511,17 +512,20 @@ position = Vector2(170.5, -57.5)
 [node name="Tower7" parent="TowerContainer" index="6" instance=ExtResource("4_nrbt5")]
 position = Vector2(-170, 87)
 
-[node name="AnimalsContainer" type="Node2D" parent="." index="3"]
+[node name="EggContainer" type="Node2D" parent="." index="3"]
+script = ExtResource("6_kmbnb")
+
+[node name="AnimalsContainer" type="Node2D" parent="." index="4"]
 position = Vector2(-216.5, -128.5)
 script = ExtResource("4_x2wqw")
 
 [node name="SpawnTimer" type="Timer" parent="AnimalsContainer" index="0"]
 autostart = true
 
-[node name="Camera2D" type="Camera2D" parent="." index="4"]
+[node name="Camera2D" type="Camera2D" parent="." index="5"]
 script = ExtResource("8_aeclc")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="5"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" index="0"]
 offset_right = 40.0

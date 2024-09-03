@@ -17,6 +17,4 @@ func _on_tower_shooting(tower_position, target):
 	new_arrow.target = target
 	new_arrow.rotation = 0
 	new_arrow.look_at(target.global_position)
-	#new_arrow.rotation = rot
-	#rot += 45
 	add_child(new_arrow)
