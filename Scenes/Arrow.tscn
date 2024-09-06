@@ -16,11 +16,11 @@ collision_mask = 2
 script = ExtResource("2_v6nhf")
 
 [node name="ArrowSprite2" type="Sprite2D" parent="."]
-position = Vector2(0, 4)
+rotation = 1.5708
 texture = ExtResource("2_kaaw8")
 
 [node name="ArrowCollision2" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4.5)
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_4ub3u")
 
 [node name="NavAgent" type="NavigationAgent2D" parent="."]
@@ -31,7 +31,8 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="AreaCollision" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(0, -1)
+position = Vector2(0, -5)
+rotation = 1.5708
 scale = Vector2(1, 0.880001)
 shape = SubResource("CapsuleShape2D_i8twi")
 

@@ -15,6 +15,9 @@ func _on_tower_shooting(tower_position, target):
 	var new_arrow = arrow.instantiate()
 	new_arrow.dir = (target.global_position - tower_position).normalized()
 	new_arrow.target = target
-	new_arrow.rotation = 0
-	new_arrow.look_at(target.global_position)
+	print("from arrow_container: ", target.global_position)
+	#new_arrow.rotation = 90
+	#new_arrow.look_at(target.global_position)
 	add_child(new_arrow)
+	#new_arrow.rotation = 180
+	#new_arrow.look_at(target.global_position)

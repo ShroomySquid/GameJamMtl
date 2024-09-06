@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://crbguvl1pnyeh"]
+[gd_scene load_steps=5 format=3 uid="uid://crbguvl1pnyeh"]
 
 [ext_resource type="Texture2D" uid="uid://csxl34rq41jkt" path="res://PNG/egg.png" id="1_f06dw"]
 [ext_resource type="Script" path="res://Scenes/egg.gd" id="1_hql62"]
@@ -6,6 +6,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rlqkt"]
 radius = 5.0
 height = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qonna"]
+radius = 6.0
 
 [node name="Egg" type="StaticBody2D"]
 collision_layer = 32
@@ -18,3 +21,11 @@ shape = SubResource("CapsuleShape2D_rlqkt")
 [node name="EggSprite" type="Sprite2D" parent="."]
 position = Vector2(1, -1)
 texture = ExtResource("1_f06dw")
+
+[node name="MouseArea" type="Area2D" parent="."]
+
+[node name="MouseClick" type="CollisionShape2D" parent="MouseArea"]
+shape = SubResource("CircleShape2D_qonna")
+
+[connection signal="mouse_shape_entered" from="MouseArea" to="." method="_on_mouse_area_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="MouseArea" to="." method="_on_mouse_area_mouse_shape_exited"]

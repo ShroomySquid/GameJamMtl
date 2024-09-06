@@ -5,6 +5,12 @@ const damage = 5
 var target : CharacterBody2D
 var dir : Vector2
 
+func _ready():
+	rotation = 180
+	look_at(target.global_position)
+	print("target from ready: ", target.global_position)
+	#rotation = 90
+
 func _physics_process(_delta):
 	if (is_instance_valid(target)):
 		velocity = dir * SPEED
